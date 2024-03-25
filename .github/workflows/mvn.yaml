@@ -1,0 +1,20 @@
+name: mvn clean package workflow
+on: 
+  push:
+    branches:
+      - "main"
+
+jobs: 
+  clean-package-workfow-job:
+    name: lean-package-workfow-job:
+    runs-on: ubuntu-latest
+    steps: 
+      - name: checkout repo
+        uses: actions/checkout@v4
+        
+      - name: cleanup mvn package
+        run: mvn clean package
+        shell: bash
+
+
+
